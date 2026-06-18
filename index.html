@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- BootStrat Files -->
+    <link rel="stylesheet" href="./vendor/bootstrap/bootstrap.min.css" />
+    <script src="./vendor/bootstrap/bootstrap.bundle.min.js" defer></script>
+
+    <!-- Css Main File -->
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- Font Awsome Files -->
+    <link rel="stylesheet" href="./vendor/fontawesome/all.min.css" />
+    <script src="./vendor/fontawesome/all.min.js" defer></script>
+    <script src="./js/main.js" defer></script>
+
+    <!-- Import Sweet Alert Libarey -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <title>ContactHub - CRUD App</title>
+  </head>
+
+  <body>
+    <!-- Start Code Header -->
+    <header class="position-fixed w-100">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <div class="main-header-logo d-flex align-items-center">
+            <div
+              class="main-logo d-flex align-items-center justify-content-center me-3"
+            >
+              <i class="fa-solid fa-address-book fs-4 text-white"></i>
+            </div>
+
+            <div class="d-none d-sm-block">
+              <h1 class="fs-4 fw-bold m-0">
+                Contact<span class="main-headig-span">Hub</span>
+              </h1>
+
+              <p class="m-0 fs-7 fw-bold">Smart Contact Manager</p>
+            </div>
+          </div>
+          <div>
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item d-flex align-items-center gap-3">
+                <div class="add-contact-button">
+                  <button
+                    id="addContactBtn"
+                    class="d-flex align-items-center add-contact py-2 px-3 text-white fw-bold"
+                  >
+                    <i class="fa-solid fa-plus me-1"></i>
+                    <span class="d-none d-lg-block">Add Contact</span>
+                    <span class="d-block d-lg-none">Add</span>
+                  </button>
+                </div>
+                <div
+                  class="account-image d-flex align-items-center justify-content-center"
+                >
+                  <img src="./assets/imges/avatar-4.jpg" alt="personal-image" />
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- End Code Header -->
+  </body>
+</html>
