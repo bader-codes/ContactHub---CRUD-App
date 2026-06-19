@@ -14,7 +14,7 @@
     <!-- Font Awsome Files -->
     <link rel="stylesheet" href="./vendor/fontawesome/all.min.css" />
     <script src="./vendor/fontawesome/all.min.js" defer></script>
-    <script src="./js/main.js" defer></script>
+    <script src="./js/index.js" defer></script>
 
     <!-- Import Sweet Alert Libarey -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -24,7 +24,7 @@
 
   <body>
     <!-- Start Code Header -->
-    <header class="position-fixed w-100">
+    <header class="position-fixed w-100 top-0">
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
           <div class="main-header-logo d-flex align-items-center">
@@ -130,7 +130,7 @@
                 class="emergency-contact-icon icon px-1 py-3 rounded-3 d-flex align-items-center justify-content-center"
               >
                 <i
-                  class="fa-solid fa-heart-pulse d-block mx-3 fs-5 text-white"
+                  class="fa-solid fa-heart-pulse d-block mx-3 fs-4 text-white"
                 ></i>
               </div>
 
@@ -150,6 +150,222 @@
     </section>
     <!-- Summary Cards -->
 
-    
+    <!-- Modal Data Box -->
+    <section class="contact-modal-box position-fixed d-none" id="contact-modal">
+      <div class="position-fixed top-0 start-0 bottom-0 end-0 overlay"></div>
+      <div
+        class="position-fixed top-0 start-0 bottom-0 end-0 d-flex justify-content-center"
+      >
+        <div class="row w-100 d-flex align-items-center justify-content-center">
+          <div class="col-12 col-md-10 col-lg-6">
+            <div class="bg-white rounded-4 contact-box overflow-auto">
+              <div
+                class="contact-box-header d-flex align-items-center border-bottom justify-content-between sticky-top bg-white p-3"
+              >
+                <h2 class="fs-6 fw-bold m-0">Add New Contact</h2>
+                <button
+                  class="contact-close-button d-flex align-items-center justify-content-center rounded-1 p-1"
+                  id="close-btn"
+                  type="button"
+                >
+                  <i class="fa-solid fa-xmark fs-5"></i>
+                </button>
+              </div>
+
+              <form class="py-2 px-4 px-lg-5" id="contact-form-control">
+                <div
+                  class="w-100 d-flex flex-column align-items-center justify-content-center py-2 mb-3"
+                >
+                  <div
+                    class="contact-photo rounded-circle d-flex align-items-center justify-content-center mb-3"
+                  >
+                    <img
+                      src="./assets/images/phone.webp"
+                      id="user-photo"
+                      class="w-100 h-100 rounded-circle user-live-photo"
+                      alt="userPhoto"
+                    />
+                  </div>
+
+                  <div class="mb-3 photo-input">
+                    <label
+                      for="user-photo-input"
+                      class="form-label fw-500 rounded-1 m-0 d-flex align-items-center justify-content-center p-2"
+                    >
+                      <i class="fa-solid fa-camera me-2"></i>
+                      <span class="fs-7 fw-bold">Change Photo</span>
+                    </label>
+                    <input
+                      class="form-control d-none"
+                      type="file"
+                      id="user-photo-input"
+                    />
+                  </div>
+                </div>
+
+                <div class="mb-3 input-data-info">
+                  <label for="f-name-input" class="form-label fw-500">
+                    Full Name
+                    <span class="reqier-icon">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control full-name"
+                    id="f-name-input"
+                    placeholder="Enter First Name"
+                  />
+                  <span id="validation-msg" class="validation-msg">
+                    Name should contain only letters and spaces (2-50
+                    characters)
+                  </span>
+                </div>
+
+                <div class="mb-3 input-data-info">
+                  <label for="phone-input" class="form-label fw-500">
+                    Phone Number
+                    <span class="reqier-icon">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control full-name"
+                    id="phone-input"
+                    placeholder="e.g. 01026450424"
+                  />
+                  <span id="validation-phone-msg" class="validation-msg">
+                    Please enter a valid Egyptian phone number
+                  </span>
+                </div>
+
+                <div class="mb-3 input-data-info">
+                  <label for="email-input" class="form-label fw-500">
+                    Email address
+                  </label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email-input"
+                    placeholder="name@example.com"
+                  />
+                </div>
+
+                <div class="mb-3 input-data-info">
+                  <label for="adress-input" class="form-label fw-500"
+                    >Address</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="adress-input"
+                    placeholder="Enter Adress"
+                  />
+                </div>
+
+                <div class="mb-3 input-data-info d-flex flex-column">
+                  <label
+                    for="groupe-input"
+                    class="form-label groupe-label fw-500"
+                    >Groupe</label
+                  >
+                  <select
+                    class="form-select form-control groupe-label"
+                    id="groupe-input"
+                  >
+                    <option selected>Select Groupe</option>
+                    <option value="1">Family</option>
+                    <option value="2">Friends</option>
+                    <option value="3">Work</option>
+                    <option value="4">School</option>
+                    <option value="3">Other</option>
+                  </select>
+                </div>
+
+                <div class="input-data-info mb-1">
+                  <label for="note-input" class="mb-2 fw-500">Notes</label>
+                  <textarea
+                    class="form-control note-input"
+                    placeholder="Add Notes About This Contact"
+                    id="note-input"
+                  >
+                  </textarea>
+                </div>
+
+                <div class="px-3">
+                  <div class="row align-items-center py-3 g-3">
+                    <div class="col-12 col-lg-6 p-0">
+                      <div class="form-check d-flex align-items-center">
+                        <input
+                          class="form-check-input me-2"
+                          type="checkbox"
+                          value=""
+                          id="eme-input"
+                        />
+                        <label
+                          class="form-check-label mt-1 d-flex align-items-center justify-content-center"
+                          for="eme-input"
+                        >
+                          <i class="fa-solid fa-heart-pulse me-2"></i>
+                          <span class="fw-500">Emergency</span>
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="col-12 col-lg-6 p-0">
+                      <div class="form-check d-flex align-items-center">
+                        <input
+                          class="form-check-input me-2"
+                          type="checkbox"
+                          value=""
+                          id="fav-input"
+                        />
+                        <label
+                          class="form-check-label mt-1 d-flex align-items-center justify-content-center"
+                          for="fav-input"
+                        >
+                          <i class="fa-solid fa-star me-2"></i>
+                          <span class="fw-500">Favorite</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-contact-button py-2">
+                  <div class="row justify-content-between">
+                    <div class="col-6 p-2">
+                      <button
+                        class="cancel-button rounded-2 fw-600 w-100 py-2"
+                        id="cancel-contact-btn"
+                        type="button"
+                      >
+                        Cancel
+                      </button>
+                    </div>
+                    <div class="col-6 p-2">
+                      <button
+                        class="save-button rounded-2 fw-600 fs-6 w-100 py-2 text-white d-flex align-items-center justify-content-center"
+                        id="save-contact-btn"
+                        type="button"
+                      >
+                        <i class="fa-solid fa-check me-2"></i>
+                        <span>Save</span>
+                      </button>
+
+                      <button
+                        id="update-contact-btn"
+                        class="update-button bg-warning rounded-2 fw-600 fs-6 w-100 py-2 text-white d-flex align-items-center justify-content-center d-none"
+                      >
+                        <i class="fa-solid fa-pen me-2"></i>
+                        <span>Update</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Modal Data Box -->
   </body>
 </html>

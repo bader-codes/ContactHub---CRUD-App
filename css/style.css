@@ -2,11 +2,16 @@
 * {
   box-sizing: border-box;
 }
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 /* Root Style */
 
 /* Header Style */
 header {
-  top: 0;
   z-index: 1;
   backdrop-filter: blur(20px);
   background-color: color-mix(in oklab, #ececec 70%, transparent);
@@ -15,8 +20,8 @@ header {
 header .main-header-logo .main-logo {
   width: 3rem;
   height: 3rem;
-  background: linear-gradient(to right, #7f22fe, #4f39f6);
   border-radius: 0.75rem;
+  background: linear-gradient(to right, #7f22fe, #4f39f6);
 }
 
 header .main-header-logo p {
@@ -41,31 +46,6 @@ header .navbar-nav .add-contact:hover {
     #7e22feb9 0px 2px 10px;
 }
 
-header .navbar-nav .notice,
-header .navbar-nav .setting {
-  width: 2.5rem;
-  height: 2.5rem;
-  cursor: pointer;
-  transition: background-color 0.5s ease;
-  color: var(--color-gray-500);
-  border-radius: 0.5rem;
-}
-
-header .navbar-nav .notice:hover,
-header .navbar-nav .setting:hover {
-  background-color: var(--color-gray-300);
-}
-
-header .navbar-nav .setting .fa-gear,
-header .navbar-nav .notice .fa-bell {
-  transition: color 0.5s ease;
-}
-
-header .navbar-nav .setting:hover .fa-gear,
-header .navbar-nav .notice:hover .fa-bell {
-  color: #636363;
-}
-
 header .navbar-nav .account-image img {
   width: 2.5rem;
   height: 2.5rem;
@@ -76,9 +56,6 @@ header .navbar-nav .account-image img {
 /* Header Style */
 
 /* contacts-summary */
-
-.contacts-summary {
-}
 
 .contacts-summary .summary-card {
   border: 2px solid #e1e1e1;
@@ -93,7 +70,104 @@ header .navbar-nav .account-image img {
 }
 
 .contacts-summary .summary-card .emergency-contact-icon {
-  background: linear-gradient(to right, #ff2056, #e7000b);
+  background: linear-gradient(to right, #de2315, #ff0000);
 }
 
 /* contacts-summary */
+
+/* Start Style Modle Box Content */
+.contact-modal-box {
+  inset: 0;
+  z-index: 1;
+}
+
+.contact-modal-box .overlay {
+  background-color: color-mix(in oklab, #000000 60%, transparent);
+  backdrop-filter: blur(4px);
+}
+
+.contact-modal-box .contact-box {
+  height: 90vh;
+  scrollbar-width: none;
+}
+
+.contact-modal-box .contact-close-button {
+  background-color: transparent;
+  border: 1px solid #dcdcdc;
+  transition: all 0.3s ease;
+  border-radius: 100%;
+  color: #6a6a6a;
+}
+
+.contact-modal-box .contact-close-button:hover {
+  color: #e7000b;
+}
+
+.contact-modal-box form .photo-input label {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.contact-modal-box form .validation-msg {
+  display: none;
+  color: #b60c00;
+}
+
+.contact-modal-box .contact-photo {
+  width: 6rem;
+  height: 6rem;
+}
+
+.contact-modal-box .contact-photo .user-live-photo {
+  object-fit: scale-down;
+}
+
+.contact-modal-box .input-data-info .reqier-icon {
+  color: red;
+}
+
+.contact-modal-box form .form-control:focus {
+  box-shadow: none;
+}
+
+.contact-modal-box form .input-data-info .groupe-label {
+  cursor: pointer;
+}
+
+.contact-modal-box form .input-data-info .note-input {
+  height: 5rem;
+  resize: none;
+}
+
+.contact-modal-box form .form-check-input {
+  box-shadow: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid #b4b4b4;
+}
+
+.contact-modal-box form .form-check label,
+.contact-modal-box form .form-check input {
+  cursor: pointer;
+}
+
+.contact-modal-box form .form-check .fa-star {
+  color: #ffd500;
+}
+
+.contact-modal-box form .form-check .fa-heart-pulse {
+  color: #b60c00;
+}
+
+.contact-modal-box form .cancel-button {
+  background-color: #dcdcdc;
+}
+
+.contact-modal-box form button {
+  border: none;
+}
+
+.contact-modal-box form .save-button {
+  background: linear-gradient(to right, #2b7fff, #155dfb);
+}
+/* End Style Modle Box Content */
