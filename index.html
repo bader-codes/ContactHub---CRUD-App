@@ -177,47 +177,30 @@
                   class="w-100 d-flex flex-column align-items-center justify-content-center py-2 mb-3"
                 >
                   <div
-                    class="contact-photo rounded-circle d-flex align-items-center justify-content-center mb-3"
+                    class="contact-photo rounded-circle d-flex align-items-center justify-content-center"
                   >
                     <img
                       src="./assets/images/phone.webp"
                       id="user-photo"
                       class="w-100 h-100 rounded-circle user-live-photo"
                       alt="userPhoto"
-                    />
-                  </div>
-
-                  <div class="mb-3 photo-input">
-                    <label
-                      for="user-photo-input"
-                      class="form-label fw-500 rounded-1 m-0 d-flex align-items-center justify-content-center p-2"
-                    >
-                      <i class="fa-solid fa-camera me-2"></i>
-                      <span class="fs-7 fw-bold">Change Photo</span>
-                    </label>
-                    <input
-                      class="form-control d-none"
-                      type="file"
-                      id="user-photo-input"
+                      accept="image/*"
                     />
                   </div>
                 </div>
 
                 <div class="mb-3 input-data-info">
-                  <label for="f-name-input" class="form-label fw-500">
+                  <label for="full-name-input" class="form-label fw-500">
                     Full Name
                     <span class="reqier-icon">*</span>
                   </label>
                   <input
                     type="text"
                     class="form-control full-name"
-                    id="f-name-input"
+                    id="full-name-input"
                     placeholder="Enter First Name"
                   />
-                  <span id="validation-msg" class="validation-msg">
-                    Name should contain only letters and spaces (2-50
-                    characters)
-                  </span>
+                  <span id="name-error-msg" class="validation-msg"></span>
                 </div>
 
                 <div class="mb-3 input-data-info">
@@ -231,9 +214,7 @@
                     id="phone-input"
                     placeholder="e.g. 01026450424"
                   />
-                  <span id="validation-phone-msg" class="validation-msg">
-                    Please enter a valid Egyptian phone number
-                  </span>
+                  <span id="phone-error-msg" class="validation-msg"></span>
                 </div>
 
                 <div class="mb-3 input-data-info">
@@ -246,18 +227,20 @@
                     id="email-input"
                     placeholder="name@example.com"
                   />
+                  <span id="email-error-msg" class="validation-msg"></span>
                 </div>
 
                 <div class="mb-3 input-data-info">
-                  <label for="adress-input" class="form-label fw-500"
+                  <label for="address-input" class="form-label fw-500"
                     >Address</label
                   >
                   <input
                     type="text"
                     class="form-control"
-                    id="adress-input"
-                    placeholder="Enter Adress"
+                    id="address-input"
+                    placeholder="Enter Address"
                   />
+                  <span id="address-error-msg" class="validation-msg"></span>
                 </div>
 
                 <div class="mb-3 input-data-info d-flex flex-column">
@@ -285,8 +268,8 @@
                     class="form-control note-input"
                     placeholder="Add Notes About This Contact"
                     id="note-input"
-                  >
-                  </textarea>
+                  ></textarea>
+                  <span id="notes-error-msg" class="validation-msg"></span>
                 </div>
 
                 <div class="px-3">
