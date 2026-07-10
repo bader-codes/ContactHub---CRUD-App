@@ -14,7 +14,7 @@
     <!-- Font Awsome Files -->
     <link rel="stylesheet" href="./vendor/fontawesome/all.min.css" />
     <script src="./vendor/fontawesome/all.min.js" defer></script>
-    <script src="./js/index.js" defer></script>
+    <script src="./js/index.js" type="module" defer></script>
 
     <!-- Import Sweet Alert Libarey -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -47,7 +47,7 @@
               <li class="nav-item d-flex align-items-center gap-3">
                 <div class="add-contact-button">
                   <button
-                    id="addContactBtn"
+                    id="add-contact-btn"
                     class="d-flex align-items-center add-contact py-2 px-3 text-white fw-bold"
                   >
                     <i class="fa-solid fa-plus me-1"></i>
@@ -90,7 +90,7 @@
                 <p class="m-0 text-uppercase fs-5">Total</p>
                 <p
                   id="total-contact-count"
-                  class="fw-bold fs-5 m-0 text-center"
+                  class="fw-bold fs-5 m-0"
                 >
                   0
                 </p>
@@ -113,7 +113,7 @@
                 <p class="m-0 text-uppercase fs-5">Favorites</p>
                 <p
                   id="favorites-contact-count"
-                  class="text-center fw-bold fs-5 m-0"
+                  class="fw-bold fs-5 m-0"
                 >
                   0
                 </p>
@@ -138,7 +138,7 @@
                 <p class="m-0 text-uppercase fs-5">Emergency</p>
                 <p
                   id="emergency-contact-count"
-                  class="text-center fw-bold fs-5 m-0"
+                  class="fw-bold fs-5 m-0"
                 >
                   0
                 </p>
@@ -262,16 +262,6 @@
                   </select>
                 </div>
 
-                <div class="input-data-info mb-1">
-                  <label for="note-input" class="mb-2 fw-500">Notes</label>
-                  <textarea
-                    class="form-control note-input"
-                    placeholder="Add Notes About This Contact"
-                    id="note-input"
-                  ></textarea>
-                  <span id="notes-error-msg" class="validation-msg"></span>
-                </div>
-
                 <div class="px-3">
                   <div class="row align-items-center py-3 g-3">
                     <div class="col-12 col-lg-6 p-0">
@@ -350,5 +340,89 @@
       </div>
     </section>
     <!-- Modal Data Box -->
+
+    <main>
+      <div class="container">
+        <div class="row g-lg-5">
+          <div class="col-12 col-lg-7">
+            <div class="mb-3">
+              <h2 class="mb-1 fw-bold main-title">All Contacts</h2>
+              <p class="m-0 fs-7 main-description" id="main-description">
+                Manage and organize your 0 contacts
+              </p>
+            </div>
+
+            <div
+              class="d-flex flex-column align-items-center justify-content-center"
+            >
+              <div class="search-box position-relative w-100">
+                <input
+                  type="text"
+                  placeholder="Search by name, phone, or email..."
+                  id="search-input"
+                  class="search-input rounded-2 w-100"
+                />
+
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+              </div>
+
+              <div id="contact-list" class="contact-list w-100"></div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-5 py-4">
+            <section
+              id="favorites-contact-data"
+              class="shadow favorites-data mb-5 rounded-4"
+            >
+              <div class="d-flex flex-column">
+                <div class="favorites-contact-card rounded-top-4 d-flex p-2">
+                  <div
+                    class="favorites-contact-icon contact-icon d-flex align-items-center justify-content-center me-2"
+                  >
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+
+                  <div>
+                    <h2 class="fs-6 fw-bold m-0">Favorites</h2>
+                    <p class="fs-7 m-0">Quick access</p>
+                  </div>
+                </div>
+
+                <div class="favorites-contact-menu py-3 px-3 px-lg-4" id="favorite-contact-menu">
+
+                </div>
+              </div>
+            </section>
+            <section
+              id="emergency-contact-data"
+              class="shadow emergency-data rounded-4"
+            >
+              <div class="d-flex flex-column">
+                <div class="emergency-contact-card d-flex p-2 rounded-top-4">
+                  <div
+                    class="emergency-contact-icon contact-icon d-flex align-items-center justify-content-center me-2"
+                  >
+                    <i class="fa-solid fa-heart-crack"></i>
+                  </div>
+
+                  <div>
+                    <h2 class="fs-6 fw-bold m-0">emergency</h2>
+                    <p class="fs-7 m-0">Quick access</p>
+                  </div>
+                </div>
+
+                <div
+                  class="emergency-contact-menu py-3 px-3 px-lg-4"
+                  id="emergency-contact-menu"
+                >
+
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
